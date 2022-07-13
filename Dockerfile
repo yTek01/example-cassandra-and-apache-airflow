@@ -6,9 +6,7 @@ RUN apt-get update \
   && apt-get autoremove -yqq --purge \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
-RUN apt-get update && \
-  apt-get upgrade -y && \
-  apt-get install -y git
+
 USER airflow
 RUN pip install --no-cache-dir lxml
 RUN pip install --no-cache-dir apache-airflow-providers-docker==2.1.0
